@@ -1,0 +1,16 @@
+extends layout
+
+block content
+ .row.banner  
+  .col-12
+   h1= pageHeader.title
+    small &nbsp;#{pageHeader.strapLine}
+ .row
+  .row
+  .col-12.col-md-4
+   label(for = 'selectWells') Select Wells to Gather
+    .row
+    select#check(name='selectWells' size='20' multiple required)
+     each well in wells
+      option(value=(well.Well)) #{well.Well}
+      

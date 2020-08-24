@@ -11,7 +11,7 @@ const Trajectory = function(trajectory) {
 };
 
 Trajectory.getAll = result => {
-    sql.query("SELECT * FROM trajectories limit 10", (err, res) => {
+    sql.query("SELECT distinct(Well) FROM trajectories", (err, res) => {
       if (err) {
         console.log("error: ", err);
         result(null, err);
