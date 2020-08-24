@@ -1,0 +1,25 @@
+const sql = require("./db.js");
+
+// constructor
+const Trajectory = function(trajectory) {
+  this.API = trajectory.API;
+  this.Well = trajectory.Well;
+  this.DEPTHMD = trajectory.DEPTHMD;
+  this.TVD = trajectory.TVD;
+  this.XCOORD = trajectory.XCOORD;
+  this.YCOORD = trajectory.YCOORD;
+};
+
+Trajectory.getAll = result => {
+    sql.query("SELECT * FROM trajectories limit 10", (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(null, err);
+        return;
+      }
+      console.log("trajectory: ", res);
+      result(null, res);
+    });
+  };
+
+  module.exports = Trajectory;

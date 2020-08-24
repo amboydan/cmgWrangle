@@ -1,5 +1,16 @@
 extends layout
 
 block content
-  h1= title
+ .row.banner  
+  .col-12
+   h1= pageHeader.title
+    small &nbsp;#{pageHeader.strapLine}
+ .row
+  .col-12.col-md-4
+   each well in wells
+      h4
+       a(href="/location")=well.Well
+    
+   
+      
 
