@@ -11,13 +11,13 @@ const Trajectory = function(trajectory) {
 };
 
 Trajectory.getAll = result => {
-    sql.query("SELECT distinct(Well) FROM trajectories", (err, res) => {
+    sql.query("SELECT distinct(Well), API FROM trajectories", (err, res) => {
       if (err) {
         console.log("error: ", err);
         result(null, err);
         return;
       }
-      console.log("trajectory: ", res);
+      //console.log("wellName: ", res);
       result(null, res);
     });
   };

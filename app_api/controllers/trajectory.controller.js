@@ -6,7 +6,7 @@ const findAll = (req, res) => {
         if(err)
             res.status(500).send({
                 message:
-                    err.message || "Some error occurec while retrieving trajectories"
+                    err.message || "Some error occured while retrieving trajectories"
             });
         else res.send(data);
     });
