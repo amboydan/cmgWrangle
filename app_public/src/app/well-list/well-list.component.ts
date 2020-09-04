@@ -12,7 +12,7 @@ export class WellName {
   styleUrls: ['./well-list.component.css']
 })
 export class WellListComponent implements OnInit {
-
+  inputText: string = "initialValue";
   constructor(private wellDataService: WellDataService) { }
 
   public wellNames: WellName[];
@@ -20,8 +20,6 @@ export class WellListComponent implements OnInit {
     this.wellDataService
       .getWells()
       .then(foundWells => {
-        const check = foundWells.map(e => e.API)
-        console.log(check);
         this.wellNames = foundWells;
       });
   };

@@ -1,7 +1,7 @@
+const url = require('url');
 const Trajectory = require("../models/trajectory.model.js");
 
 const findAll = (req, res) => {
-    //res.send("this is crap");
     Trajectory.getAll((err, data) => {
         if(err)
             res.status(500).send({
